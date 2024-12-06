@@ -4,7 +4,7 @@ def email(email):
     from email.mime.multipart import MIMEMultipart
     from email.utils import formataddr
     # 邮件的基本信息
-    sender_email = Sender_163
+    sender_email = Sender163
     receiver_email = email
     password = Password
     # 创建一个多部分的邮件
@@ -13,7 +13,7 @@ def email(email):
     msg['To'] = receiver_email
     msg['Subject'] = "BPB Server Everyday"
     # 邮件正文内容
-    body = B_pb
+    body = Bpb
     msg.attach(MIMEText("每天的 BPB VPN Server：\n" + body, 'plain'))
     # 发送邮件
     # 使用 163 的 SMTP 服务器
@@ -25,16 +25,16 @@ def email(email):
 
 if __name__ == "__main__":
     with open("AD.qq.email", "r", encoding="utf-8") as adqq:
-        AD_qq = adqq.read()
+        ADqq = adqq.read()
     with open("AD.163.email", "r", encoding="utf-8") as ad163:
-        Ad_163 = ad163.read()
+        Ad163 = ad163.read()
     with open("SENDER.163.email", "r", encoding="utf-8") as sender163:
-        Sender_163 = sender163
-    with open("PASSWORD", "r", encoding="utf-8") as paassword:
-        Password = paassword.read()
+        Sender163 = sender163
+    with open("PASSWORD", "r", encoding="utf-8") as password:
+        Password = password.read()
     with open("OK.txt", "r", encoding="utf-8") as bpb:
-        B_pb = bpb.read()
+        Bpb = bpb.read()
     
     """Send Message"""
-    email(AD_qq)
-    email(Ad_163)
+    email(ADqq)
+    email(Ad163)
