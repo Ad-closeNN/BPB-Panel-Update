@@ -1,5 +1,7 @@
 name: 更新 BPB 面板数据
-on: 
+on:
+  push:
+    branches: [ main ]
   workflow_dispatch: # 手动运行
   schedule: # 每日更新
     - cron: '0 16 * * *' # UTC+8 的 00:00
