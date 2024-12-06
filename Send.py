@@ -14,7 +14,7 @@ def email(email):
     msg['Subject'] = "BPB Server Everyday"
     # 邮件正文内容
     body = Bpb
-    msg.attach(MIMEText("每天的 BPB VPN Server：\n服务器地址：\n\n" + body + """<hr style="border: none;margin: 16px 0px; border-top: 1px solid rgb(230, 232, 235);">""" + SOMEurl + """<span style="font-family: MiSans, &quot;HarmonyOS Sans SC&quot;, -apple-system, system-ui; font-size: 11pt; color: rgb(0, 0, 0); line-height: 1.6;"><br></span>""", 'plain'))
+    msg.attach(MIMEText("每天的 BPB VPN Server：\n服务器地址：\n\n" + str(body) + """<hr style="border: none;margin: 16px 0px; border-top: 1px solid rgb(230, 232, 235);">""" + SOMEurl + """<span style="font-family: MiSans, &quot;HarmonyOS Sans SC&quot;, -apple-system, system-ui; font-size: 11pt; color: rgb(0, 0, 0); line-height: 1.6;"><br></span>""", 'plain'))
     # 发送邮件
     # 使用 163 的 SMTP 服务器
     server = smtplib.SMTP('smtp.163.com', 25)
@@ -41,7 +41,7 @@ if __name__ == "__main__":
             file.write(trojan_link+"\n")
     with open("O.txt", "r", encoding="utf-8") as e:
         SOMEurl = e.read()
-    
+
     """Send Message"""
     email(ADqq)
     email(Ad163)
