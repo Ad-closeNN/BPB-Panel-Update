@@ -28,6 +28,7 @@ if __name__ == "__main__":
     ADqq = os.getenv("ADQQ")
     Ad163 = os.getenv("ADOST")
     Sender163 = os.getenv("SENDER")
+    print(Sender163)
     Password = os.getenv("PASSWORD")
     with open("OK.txt", "r", encoding="utf-8") as bpb:
         Bpb = bpb.read()
