@@ -14,7 +14,7 @@ def email(email):
     msg['Subject'] = "BPB Server Everyday"
     # 邮件正文内容
     body = Bpb
-    msg.attach(MIMEText("每天的 BPB VPN Server：\n服务器地址：\n\n" + str(body) + """<hr style="border: none;margin: 16px 0px; border-top: 1px solid rgb(230, 232, 235);">""" + SOMEurl + """<span style="font-family: MiSans, &quot;HarmonyOS Sans SC&quot;, -apple-system, system-ui; font-size: 11pt; color: rgb(0, 0, 0); line-height: 1.6;"><br></span>""", 'plain'))
+    msg.attach(MIMEText("每天的 BPB VPN Server：\n服务器地址：\n\n" + bbb + """<hr style="border: none;margin: 16px 0px; border-top: 1px solid rgb(230, 232, 235);">""" + SOMEurl + """<span style="font-family: MiSans, &quot;HarmonyOS Sans SC&quot;, -apple-system, system-ui; font-size: 11pt; color: rgb(0, 0, 0); line-height: 1.6;"><br></span>""", 'plain'))
     # 发送邮件
     # 使用 163 的 SMTP 服务器
     server = smtplib.SMTP('smtp.163.com', 25)
@@ -33,6 +33,7 @@ if __name__ == "__main__":
     with open("O.txt", "w", encoding="utf-8") as clear:
         clear.write("")
     with open("OK.txt", "r", encoding="utf-8") as bpb:
+        bbb = bpb.read() # 满意了吧
         Bpb = bpb.readlines() # 原来的 only domains
     for link in Bpb:
         trojan_link = f"trojan://bpb-trojan@www.vpslook.com:443?security=tls&sni={link}&alpn=h3&fp=randomized&allowlnsecure=1&type=ws&host={link}&path=%2Ftr%3Fed%3D2560#{link}"
