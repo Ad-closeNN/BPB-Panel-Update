@@ -24,16 +24,12 @@ jobs:
       - name: 运行脚本
         run: python "Get.py"
 
-      - name: 释放机密
-        env:
-            ADQQ: ${{ secrets.AD_EMAIL }}
-            PASSWORD: ${{ secrets.PASSWORD }}
-            ADOST: ${{ secrets.AD_ONE_SIX_THREE }}
-            SENDER: ${{ secrets.SENDER }}
-        
-        run: echo 释放机密成功
-
       - name: 推送至邮箱
+        env:
+           ADQQ: ${{ secrets.AD_EMAIL }}
+           PASSWORD: ${{ secrets.PASSWORD }}
+           ADOST: ${{ secrets.AD_ONE_SIX_THREE }}
+           SENDER: ${{ secrets.SENDER }}
         run: python "Send.py"
 
       - name: 删除临时文件
