@@ -25,14 +25,16 @@ jobs:
         run: python "Get.py"
 
       - name: 释放机密
-        run: |
-            echo ${{ secrets.AD_EMAIL }} > AD.qq.email
-            echo ${{ secrets.AD_ONE_SIX_THREE }} > AD.163.email
-            echo ${{ secrets.SENDER }} > SENDER.163.email
-            echo ${{ secrets.PASSWORD }} > PASSWORD
+        env:
+            ADQQ: ${{ secrets.AD_EMAIL }}
+            PASSWORD: ${{ secrets.PASSWORD }}
+            ADOST: ${{ secrets.AD_ONE_SIX_THREE }}
+            SENDER: ${{ secrets.SENDER }}
+        
+        run: echo 释放机密成功
 
       - name: 推送至邮箱
         run: python "Send.py"
 
       - name: 删除临时文件
-        run: rm -rf AD.qq.email AD.163.email SENDER.163.email PASSWORD 1.txt 2.txt OK.txt
+        run: rm -rf 1.txt 2.txt OK.txt

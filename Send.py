@@ -24,15 +24,11 @@ def email(email):
     server.quit()  # 关闭连接
 
 if __name__ == "__main__":
-    with open("AD.qq.email", "r", encoding="utf-8") as adqq:
-        ADqq = adqq.read()
-    with open("AD.163.email", "r", encoding="utf-8") as ad163:
-        Ad163 = ad163.read()
-    with open("SENDER.163.email", "r", encoding="utf-8") as sender163:
-        Sender163 = sender163.read()
-        print(Sender163)
-    with open("PASSWORD", "r", encoding="utf-8") as password:
-        Password = password.read()
+    import os
+    ADqq = os.getenv("ADQQ")
+    Ad163 = os.getenv("ADOST")
+    Sender163 = os.getenv("SENDER")
+    Password = os.getenv("PASSWORD")
     with open("OK.txt", "r", encoding="utf-8") as bpb:
         Bpb = bpb.read()
     
