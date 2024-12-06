@@ -17,7 +17,7 @@ jobs:
           python-version: '3.13'
 
       - name: 安装依赖
-        run: pip3 install requests beautifulsoup4 selenium
+        run: pip3 install requests beautifulsoup4 selenium packaging
 
       - name: 运行脚本
         run: python "Get.py"
