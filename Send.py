@@ -30,6 +30,7 @@ if __name__ == "__main__":
         Ad163 = ad163.read()
     with open("SENDER.163.email", "r", encoding="utf-8") as sender163:
         Sender163 = sender163.read()
+        print(Sender163)
     with open("PASSWORD", "r", encoding="utf-8") as password:
         Password = password.read()
     with open("OK.txt", "r", encoding="utf-8") as bpb:
