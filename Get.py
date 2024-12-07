@@ -44,7 +44,7 @@ def check_bpb_version(input_file, output_file):
     """访问地址并检查 BPB Panel 的版本号"""
     print(f"正在验证 {input_file} 中的地址...")
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
     }
     min_version = version.parse("2.5.3")  # 最低版本号
     with open(input_file, "r", encoding="utf-8") as infile, open(output_file, "w", encoding="utf-8") as outfile:
